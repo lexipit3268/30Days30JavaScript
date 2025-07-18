@@ -1,13 +1,23 @@
 # 30Days30JavaScript 🚀
 
-This is my personal learning repository for the **30 Days of JavaScript** challenge, inspired by the [GreatStack YouTube channel](https://www.youtube.com/c/GreatStack).  
-Đây là nơi mình luyện tập thử thách **30 ngày học JavaScript**, học theo hướng dẫn từ kênh YouTube **GreatStack**.
+This is my personal learning repository for the 30 Days of JavaScript challenge, inspired by the GreatStack YouTube channel.  
+Each project is built day by day to improve JavaScript skills through practical mini-projects — covering topics like DOM manipulation, events, localStorage, and more.
 
-Each folder inside `src/` contains a small daily project to improve JavaScript skills.  
-Mỗi thư mục trong `src/` tương ứng với một project nhỏ mỗi ngày để rèn luyện JavaScript — như xử lý DOM, sự kiện, localStorage, v.v.
-
-### 🛠 Technologies used / Công nghệ sử dụng:
+Technologies used:
 - HTML
 - CSS
-- JavaScript (Vanilla JS)
+- JavaScript (Vanilla)
 
+Projects are organized in the `src/` folder by day, making it easy to explore and extend later.
+
+---
+
+Đây là nơi mình lưu lại quá trình học tập thử thách 30 ngày JavaScript, học theo kênh YouTube GreatStack.  
+Mỗi ngày là một project nhỏ để luyện tập JavaScript thông qua các ví dụ thực tế — như thao tác DOM, sự kiện, localStorage và nhiều chủ đề khác.
+
+Công nghệ sử dụng:
+- HTML
+- CSS
+- JavaScript (thuần)
+
+Các project được sắp xếp trong thư mục `src/` theo từng ngày, thuận tiện cho việc tra cứu và mở rộng sau này.
