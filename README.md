@@ -10,6 +10,10 @@ Technologies used:
 
 Projects are organized in the `src/` folder by day, making it easy to explore and extend later.
 
+## 🔗 Run the Project
+
+[![Run Project](https://img.shields.io/badge/-Run%20Project-blue?style=for-the-badge&logo=github-pages)](https://lexipit3268.github.io/30Days30JavaScript/)
+
 ---
 
 Đây là nơi mình lưu lại quá trình học tập thử thách 30 ngày JavaScript, học theo kênh YouTube GreatStack.  
@@ -21,3 +25,7 @@ Công nghệ sử dụng:
 - JavaScript (thuần)
 
 Các project được sắp xếp trong thư mục `src/` theo từng ngày, thuận tiện cho việc tra cứu và mở rộng sau này.
+
+## 🔗 Run the Project
+
+[![Run Project](https://img.shields.io/badge/-Run%20Project-blue?style=for-the-badge&logo=github-pages)](https://lexipit3268.github.io/30Days30JavaScript/)
