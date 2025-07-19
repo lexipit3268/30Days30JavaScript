@@ -1,41 +1,60 @@
 const question = [
    {
-      question: "What the fuck",
+      question: "Con vật nào nổi tiếng là vua của muôn loài?",
       answers: [
-         {text: "Shark", correct: false},
-         {text: "Fuc", correct: false},
-         {text: "Lexipit", correct: true},
-         {text: "Shark", correct: false},
+         {text: "Hổ", correct: false},
+         {text: "Sư tử", correct: true},
+         {text: "Chó", correct: false},
+         {text: "Gấu", correct: false},
       ]
    },
    {
-      question: "What the fuck 2",
+      question: "Trái cây nào nổi tiếng với nhiều vitamin C?",
       answers: [
-         {text: "Shark", correct: false},
-         {text: "Fuc", correct: false},
-         {text: "Lexipit", correct: true},
-         {text: "Shark", correct: false},
+         {text: "Chuối", correct: false},
+         {text: "Táo", correct: false},
+         {text: "Cam", correct: true},
+         {text: "Nho", correct: false},
       ]
    },
    {
-      question: "Who is the creator of this quiz?",
+      question: "Thành phố nào được mệnh danh là 'Thành phố tình yêu'?",
       answers: [
-         {text: "Lexipit", correct: true},
-         {text: "GPT", correct: false},
-         {text: "Shark", correct: false},
-         {text: "Nobody", correct: false},
+         {text: "New York", correct: false},
+         {text: "Paris", correct: true},
+         {text: "Tokyo", correct: false},
+         {text: "London", correct: false},
       ]
    },
    {
-      question: "Which of the following is a fruit?",
+      question: "Loài vật nào biết bay?",
       answers: [
-         {text: "Car", correct: false},
-         {text: "Banana", correct: true},
-         {text: "Rock", correct: false},
-         {text: "Chair", correct: false},
+         {text: "Cá voi", correct: false},
+         {text: "Chim bồ câu", correct: true},
+         {text: "Hổ", correct: false},
+         {text: "Sư tử", correct: false},
+      ]
+   },
+   {
+      question: "Quốc gia nào nổi tiếng với món sushi?",
+      answers: [
+         {text: "Hàn Quốc", correct: false},
+         {text: "Trung Quốc", correct: false},
+         {text: "Nhật Bản", correct: true},
+         {text: "Thái Lan", correct: false},
+      ]
+   },
+   {
+      question: "Thứ gì luôn mọc sau cơn mưa và có nhiều màu sắc?",
+      answers: [
+         {text: "Cầu vồng", correct: true},
+         {text: "Mặt trời", correct: false},
+         {text: "Gió", correct: false},
+         {text: "Mây đen", correct: false},
       ]
    }
 ];
+
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -92,4 +111,28 @@ function selectAnswer(e){
    });
    nextButton.style.display = "block";
 }
+
+function showScore(){
+   resetState();
+   questionElement.innerHTML = `You scored ${score} out of ${question.length}!`;
+   nextButton.innerHTML = "Play again";
+   nextButton.style.display = "block";
+}
+
+function handleNextButton(){
+   currentQuestionIndex++;
+   if(currentQuestionIndex < question.length){
+      showQuestion();
+   } else{
+      showScore();
+   }
+}
+
+nextButton.addEventListener("click", () =>{
+   if(currentQuestionIndex < question.length){
+      handleNextButton();
+   } else{
+      startQuiz();
+   }
+});
 startQuiz();
