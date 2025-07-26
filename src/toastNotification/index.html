@@ -4,10 +4,16 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
-   <title>Document</title>
+   <script src="https://kit.fontawesome.com/60034728f8.js" crossorigin="anonymous"></script>
+   <title>Toast Notification</title>
 </head>
 <body>
-   <div class="container"></div>
+   <div class="buttons">
+      <button onclick="showToast(successMsg)" id="success-btn">Success</button>
+      <button onclick="showToast(errorMsg)" id="error-btn">Error</button>
+      <button onclick="showToast(invalidMsg)" id="invalid-btn">Invalid</button>
+   </div>
+   <div id="toast-box"></div>
    <script src="script.js"></script>
 </body>
 </html>
