@@ -36,6 +36,7 @@ nav .circle{
    background-color: #fff;
    color: #f35192;
    box-shadow: 0 5px 10px rgba(255, 26, 26, 0.22);
+   cursor: pointer;
 }
 
 .song-img{
@@ -43,10 +44,11 @@ nav .circle{
    border-radius: 50%;
    border: 8px solid #fff;
    box-shadow: 0 10px 60px rgba(255, 26, 26, 0.22);
+   transition: transform 0.1s linear;
 }
 
 .music-player h1{
-   font-size: 20px;
+   font-size: 26px;
    font-weight: 400;
    color: #333;
    margin-top: 20px;
@@ -58,7 +60,7 @@ nav .circle{
 }
 
 #progress{
-   -webkit-appearance: none;
+   appearance: none;
    width: 100%;
    height: 6px;
    background: #f53192;
@@ -68,7 +70,7 @@ nav .circle{
 }
 
 #progress::-webkit-slider-thumb{
-   -webkit-appearance: none;
+   appearance: none;
    background-color: #f53192;
    width: 30px;
    height: 30px;
@@ -101,4 +103,17 @@ nav .circle{
    transform: scale(1.3);
    background-color: #f53192;
    color: #fff;
+}
+
+.spin {
+   animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
 }
