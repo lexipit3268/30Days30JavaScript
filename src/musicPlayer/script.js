@@ -5,6 +5,7 @@ const songImg = document.querySelector('.song-img');
 const playBtn = document.getElementById('play-btn');
 const backwordBtn = document.getElementById('backward-btn');
 const forwardBtn = document.getElementById('forward-btn');
+const loopBtn = document.getElementById('loop-btn');
 
 let rotation = 0;
 let isRotating = false;
@@ -16,9 +17,21 @@ function rotateImage() {
    requestAnimationFrame(rotateImage);
 }
 
+let currentTime = document.getElementById('currentTime');
+let durationTime = document.getElementById('durationTime');
+
+function formatTime(time){
+   let minute = Math.floor(time / 60);
+   let seconds = Math.floor(time % 60);
+   if(seconds < 10) seconds = "0" + seconds;
+   return `${minute}:${seconds}`;
+}
+
 song.onloadedmetadata = function () {
    progress.max = song.duration;
    progress.value = song.currentTime;
+   durationTime.innerText = formatTime(song.duration);
+   currentTime.innerHTML = formatTime(song.currentTime);
 }
 
 playBtn.addEventListener("click", () => {
@@ -34,7 +47,6 @@ function playSong() {
       setPlayingStatus();
    }
 }
-
 
 function setPlayingStatus() {
    ctrlIcon.classList.remove('fa-play');
@@ -55,6 +67,7 @@ if (song.play()) {
    requestAnimationFrame(rotateImage);
    setInterval(() => {
       progress.value = song.currentTime;
+      currentTime.innerText = formatTime(song.currentTime);
    }, 250);
 }
 
@@ -78,4 +91,17 @@ backwordBtn.addEventListener("click", () => {
 
 forwardBtn.addEventListener("click", () => {
    skipTime(5);
+})
+
+let isLooping = false;
+loopBtn.addEventListener("click",()=>{
+   if(!isLooping){
+      song.loop = true;
+      loopBtn.classList.add('loop-active');
+      isLooping = true;
+   } else{
+      song.loop = false;
+      loopBtn.classList.remove('loop-active');
+      isLooping = false;
+   }
 })

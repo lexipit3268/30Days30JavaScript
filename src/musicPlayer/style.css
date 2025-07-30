@@ -47,14 +47,14 @@ nav .circle{
    transition: transform 0.1s linear;
 }
 
-.music-player h1{
+.song-detail h1{
    font-size: 26px;
    font-weight: 400;
    color: #333;
    margin-top: 20px;
 }
 
-.music-player p{
+.song-detail p{
    font-size: 14px;
    color: #333;
 }
@@ -66,7 +66,7 @@ nav .circle{
    background: #f53192;
    border-radius: 4px;
    cursor: pointer;
-   margin: 40px 0;
+   margin: 25px 0;
 }
 
 #progress::-webkit-slider-thumb{
@@ -77,6 +77,17 @@ nav .circle{
    border-radius: 50%;
    border: 8px solid #fff;
    box-shadow: 0 5px 5px rgba(255, 26, 26, 0.22);
+}
+
+.song-time{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.song-time p{
+   margin: 0;
+   font-size: 14px;
 }
 
 .controls{
@@ -101,6 +112,11 @@ nav .circle{
 
 .controls div:nth-child(2){
    transform: scale(1.3);
+   background-color: #f53192;
+   color: #fff;
+}
+
+nav .loop-active {
    background-color: #f53192;
    color: #fff;
 }

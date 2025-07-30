@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
    <script src="https://kit.fontawesome.com/60034728f8.js" crossorigin="anonymous"></script>
    <title>Music Player</title>
 </head>
+
 <body>
    <div class="container">
       <div class="music-player">
@@ -14,16 +16,21 @@
             <div class="circle">
                <i class="fa-solid fa-angle-left"></i>
             </div>
-            <div class="circle">
-               <i class="fa-solid fa-bars"></i>
+            <div class="circle" id="loop-btn">
+               <i class="fa-solid fa-reply"></i>
             </div>
          </nav>
-         <img src="media/a voicemail from stranger 3000.png" alt="" class="song-img">
-         <h1>a voicemail from stranger</h1>
-         <p>Lexipit3268</p>
+         <div class="song-detail">
+            <img src="media/a voicemail from stranger 3000.png" alt="" class="song-img">
+            <h1>a voicemail from stranger</h1>
+            <p>Lexipit3268</p>
+         </div>
          <audio id="song" src="media/Lofi 03.12.2023.mp3"></audio>
          <input type="range" value="0" id="progress">
-      
+         <div class="song-time">
+            <p id="currentTime">04:50</p>
+            <p id="durationTime">05:50</p>
+         </div>
          <div class="controls">
             <div id="backward-btn"><i class="fa-solid fa-backward"></i></div>
             <div id="play-btn"><i id="ctrlIcon" class="fa-solid fa-play"></i></div>
@@ -33,4 +40,5 @@
    </div>
    <script src="script.js"></script>
 </body>
+
 </html>
