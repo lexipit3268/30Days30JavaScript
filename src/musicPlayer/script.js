@@ -9,9 +9,9 @@ const forwardBtn = document.getElementById('forward-btn');
 let rotation = 0;
 let isRotating = false;
 
-function rotateImage(){
-   if(!isRotating) return;
-   rotation+=0.05;
+function rotateImage() {
+   if (!isRotating) return;
+   rotation += 0.05;
    songImg.style.transform = `rotate(${rotation}deg)`;
    requestAnimationFrame(rotateImage);
 }
@@ -28,19 +28,31 @@ playBtn.addEventListener("click", () => {
 function playSong() {
    if (ctrlIcon.classList.contains('fa-pause')) {
       song.pause();
-      ctrlIcon.classList.remove('fa-pause');
-      ctrlIcon.classList.add('fa-play');
-      isRotating = false;
+      setPausedStatus();
    } else {
       song.play();
-      ctrlIcon.classList.remove('fa-play');
-      ctrlIcon.classList.add('fa-pause');
-      isRotating = true;
-      requestAnimationFrame(rotateImage);
+      setPlayingStatus();
    }
 }
 
+
+function setPlayingStatus() {
+   ctrlIcon.classList.remove('fa-play');
+   ctrlIcon.classList.add('fa-pause');
+   isRotating = true;
+   requestAnimationFrame(rotateImage);
+}
+
+function setPausedStatus() {
+   ctrlIcon.classList.remove('fa-pause');
+   ctrlIcon.classList.add('fa-play');
+   isRotating = false;
+}
+
+
 if (song.play()) {
+   setPlayingStatus();
+   requestAnimationFrame(rotateImage);
    setInterval(() => {
       progress.value = song.currentTime;
    }, 250);
@@ -49,22 +61,21 @@ if (song.play()) {
 progress.onchange = function () {
    song.play();
    song.currentTime = progress.value;
-   ctrlIcon.classList.remove('fa-play');
-   ctrlIcon.classList.add('fa-pause');
+   setPlayingStatus();
 }
 
-backwordBtn.addEventListener("click",()=>{
-   skipTime(-5);
-})
-
-forwardBtn.addEventListener("click",()=>{
-   skipTime(5);
-})
-
-function skipTime(secs){
+function skipTime(secs) {
    let newtime = song.currentTime + secs;
-   if(newtime < 0) newtime = 0;
-   if(newtime > song.duration) newtime = song.duration;
+   if (newtime < 0) newtime = 0;
+   if (newtime > song.duration) newtime = song.duration;
    song.currentTime = newtime;
    progress.value = newtime;
 }
+
+backwordBtn.addEventListener("click", () => {
+   skipTime(-5);
+})
+
+forwardBtn.addEventListener("click", () => {
+   skipTime(5);
+})
