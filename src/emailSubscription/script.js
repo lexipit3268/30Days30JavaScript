@@ -8,7 +8,7 @@ const button = form.querySelector('button');
 form.addEventListener('submit', e => {
    e.preventDefault();
    msg.innerHTML = 'Sending...';
-   sheetView.innerHTML = ''; // Xoá link cũ nếu có
+   sheetView.innerHTML = '';
    button.disabled = true;
 
    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
