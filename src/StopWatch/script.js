@@ -100,7 +100,7 @@ lapBtn.addEventListener("click", () => {
    localStorage.setItem("laps", JSON.stringify(lapList));
 
    if (lapList.length > 10) {
-      alert("Đã đạt giới hạn tối đa!");
+      alert("Đã đạt giới hạn tối đa! Ok = Reset");
       resetBtn.click();
    }
 });
