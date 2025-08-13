@@ -6,11 +6,9 @@
 }
 
 body{
-   display: flex;
-   align-items: center;
-   justify-content: center;
    width: 100%;
-   height: 100vh;
+   display: flex;
+   justify-content: center;
 }
 
 .watch{
@@ -18,13 +16,28 @@ body{
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   width: 100%;
+   width: 75%;
+   background-color: #e5e5e5;
+   border-radius: 35px;
+   margin: 20px;
 }
 
 .watch #display{
    font-size: 64px;
    margin: 15px;
    font-weight: 600;
+   position: relative;
+}
+
+.watch #display::after{
+   content: '';
+   width: 50%;
+   height: 4px;
+   background-color: #90a4a8;
+   position: absolute;
+   bottom: -5px;
+   left: 50%;
+   transform: translateX(-50%);
 }
 
 .watch .controls{
