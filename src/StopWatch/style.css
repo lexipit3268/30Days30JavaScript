@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   height: 100vh;
+}
+
+.watch{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+}
+
+.watch #display{
+   font-size: 64px;
+   margin: 15px;
+   font-weight: 600;
+}
+
+.watch .controls{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   gap: 15px;
+}
+
+.watch .controls button{
+   width: 100px;
+   height: 45px;
+   outline: none;
+   border: none;
+   background-color: #4a5759;
+   color: #fff;
+   font-size: 14px;
+   border-radius: 40px;
+   cursor: pointer;
+   transition: 0.2s ease;
+}
+
+.watch .controls button:hover{
+   background-color: #262d2e;
+   transform: translateY(-5px);
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.watch .controls button:active{
+   transform: translateY(0);
+}
+
+.watch #laps{
+   margin: 10px;
+}
+
+.watch #laps li{
+   font-size: 24px;
+   list-style: square;
+   margin: 5px;
+}
+
+.watch .controls .disabled{
+   background-color: #2c2c2c;
+   color: #90a4a8;
+}
+
+.watch .controls .disabled:hover{
+   transform: none;
+   box-shadow: none;
+}
+
