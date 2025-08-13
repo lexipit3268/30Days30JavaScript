@@ -7,6 +7,12 @@ let target;
 let maxAttemp = 10;
 let remainAttemp = maxAttemp;
 
+userInput.addEventListener("keydown", function(event){
+   if(event.key === "Enter"){
+      guessBtn.click();
+   }
+})
+
 function initGame() {
    target = Math.floor(Math.random() * 100) + 1;
    console.log(target);
