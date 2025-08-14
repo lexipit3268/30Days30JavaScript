@@ -46,12 +46,12 @@ body {
    transition: 0.2s ease;
 }
 
-.search-box i:hover{
+.search-box i:hover {
    transform: scale(1.2);
    color: #2ec4b6;
 }
 
-.search-box::after{
+.search-box::after {
    content: '';
    position: absolute;
    width: 100%;
@@ -68,13 +68,13 @@ body {
    background-color: #2ec4b6;
 }
 
-.container ul#list{
+.container ul#list {
    width: 100%;
    padding: 0px 30px;
 
 }
 
-ul#list li{
+ul#list li {
    list-style: none;
    font-size: 1.3em;
    display: flex;
@@ -82,6 +82,12 @@ ul#list li{
    margin: 10px;
 }
 
-ul#list li i{
+ul#list li i {
    font-size: 1rem;
+}
+
+.highlight {
+   background: yellow;
+   font-weight: 600;
+   padding: 0 2px;
 }
