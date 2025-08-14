@@ -30,3 +30,16 @@ items = [
     "Bộ cọ trang điểm",
     "Pin sạc dự phòng Anker"
 ];
+
+const list = document.getElementById("list");
+const input = document.getElementById("search");
+
+function renderItems(items){
+   items.forEach(item => {
+      const li = document.createElement("li");
+      li.innerHTML = `<i class="fa-solid fa-angle-right"></i>${item}`
+      list.appendChild(li);
+   });
+}
+
+renderItems(items);
